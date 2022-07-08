@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Login</title>
+    <noscript>Please Enable JavaScript</noscript>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/jquery.cookie/jquery.cookie.js"></script>
+    <script>
+        $(function () {
+            $("button").click(function () {
+                if (navigator.cookieEnabled == true) {
+                    $.cookie("username", $("#userName").val());
+                    location.href = "tutorial.html";
+                } else {
+                    location.href = "error.html";
+                }
+
+            })
+
+        })
+    </script>
+</head>
+
+<body>
+    <h2>user LOgin</h2>
+    <dl>
+        <dt>Username</dt>
+        <dd>
+            <input type="text" id="userName">
+        </dd>
+        <dt>Password</dt>
+        <dd>
+            <input type="password" id="password">
+        </dd>
+    </dl>
+    <button>Login</button>
+    <br>
+    <a href="../index.html">Go to Index</a>
+</body>
+
+</html>
